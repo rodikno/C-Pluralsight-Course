@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CSharp_Pluralsight
 {
@@ -10,6 +6,20 @@ namespace CSharp_Pluralsight
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Your name:");
+            string name = Console.ReadLine();
+
+            Console.WriteLine("How many hours did you sleep last night?");
+            int hoursOfSleep = int.Parse(Console.ReadLine());
+
+            if (hoursOfSleep > 7)
+            {
+                Console.WriteLine("You are well rested");
+            }
+            else
+            {
+                Console.WriteLine("You need more sleep");
+            }
         }
     }
 }
