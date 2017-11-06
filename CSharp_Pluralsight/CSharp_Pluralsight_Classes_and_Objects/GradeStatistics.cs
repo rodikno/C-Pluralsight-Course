@@ -1,6 +1,6 @@
 ﻿namespace CSharp_Pluralsight_Classes_and_Objects
 {
-    internal class GradeStatistics
+    public class GradeStatistics
     {
         public GradeStatistics()
         {

@@ -19,7 +19,7 @@ namespace CSharp_Pluralsight_Classes_and_Objects
             Console.WriteLine(stats.AverageGrade);
             Console.WriteLine(stats.HighestGrade);
             Console.WriteLine(stats.LowestGrade);
-
+            
         }
     }
 }

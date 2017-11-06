@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CSharp_Pluralsight_Classes_and_Objects
-{
-    class GradeBook
+{   
+    public class GradeBook
     {
         public GradeBook()
         {
@@ -16,7 +16,6 @@ namespace CSharp_Pluralsight_Classes_and_Objects
         public GradeStatistics ComputeStatistics()
         {
             GradeStatistics stats = new GradeStatistics();
-            stats.HighestGrade = 0;
 
             float sum = 0;
             foreach (float grade in grades)
@@ -26,8 +25,6 @@ namespace CSharp_Pluralsight_Classes_and_Objects
                 sum += grade;
             }
             stats.AverageGrade = sum / grades.Count;
-
-
             return stats;
         }
 
