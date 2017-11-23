@@ -33,6 +33,8 @@ namespace CSharp_Pluralsight_Classes_and_Objects
             grades.Add(grade);
         }
 
+        public string Name;
+
         private List<float> grades;
     }
 }
