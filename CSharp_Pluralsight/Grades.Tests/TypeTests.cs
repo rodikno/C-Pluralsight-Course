@@ -12,6 +12,27 @@ namespace Grades.Tests
     public class GradeBookTests
     {
         [TestMethod]
+        public void IntVariablesHoldAValue()
+        {
+            int x1 = 100;
+            int x2 = x1;
+
+            x1 = 4;
+            Assert.AreNotEqual(x1, x2);
+        }
+
+        [TestMethod]
+        public void GradeBookVariablesHoldAReference()
+        {
+            GradeBook g1 = new GradeBook();
+            GradeBook g2 = g1;
+
+            g1 = new GradeBook();
+            g1.Name = "Rodion's grade book";
+            Assert.AreNotEqual(g1.Name, g2.Name);
+        }
+
+        [TestMethod]
         public void ComputesHighestGrade()
         {
             GradeBook book = new GradeBook();
@@ -43,6 +64,16 @@ namespace Grades.Tests
 
             GradeStatistics result = book.ComputeStatistics();
             Assert.AreEqual(85.16, result.AverageGrade, 0.01);
+        }
+
+        [TestMethod]
+        public void StringComparisons()
+        {
+            string name1 = "Scott";
+            string name2 = "scott";
+
+            bool result = String.Equals(name1, name2, StringComparison.InvariantCultureIgnoreCase);
+            Assert.IsTrue(result);
         }
     }
 }
