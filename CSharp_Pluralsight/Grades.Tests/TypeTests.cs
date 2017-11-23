@@ -9,8 +9,22 @@ using System.Threading.Tasks;
 namespace Grades.Tests
 {
     [TestClass]
-    public class GradeBookTests
+    public class TypeTests
     {
+        [TestMethod]
+        public void ValueTypesPassByValue()
+        {
+            int x = 46;
+            IncrementNumber(x);
+            Assert.AreEqual(46, x);
+        }
+
+        private void IncrementNumber(int number)
+        {
+            number += 1;
+            number = 0;
+        }
+
         [TestMethod]
         public void IntVariablesHoldAValue()
         {
@@ -74,6 +88,21 @@ namespace Grades.Tests
 
             bool result = String.Equals(name1, name2, StringComparison.InvariantCultureIgnoreCase);
             Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void ReferenceTypesPassedByValue()
+        {
+            GradeBook book1 = new GradeBook();
+            GradeBook book2 = book1;
+            GiveBookAName(book2);
+
+            Assert.AreEqual("A GradeBook", book1.Name);
+        }
+
+        private void GiveBookAName(GradeBook book)
+        {
+            book.Name = "A GradeBook";
         }
     }
 }
